@@ -1,0 +1,227 @@
+@import url('https://fonts.googleapis.com/css2?family=Neucha&display=swap');
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	font-family: 'Neucha', cursive;
+	font-size: 30px;
+}
+
+.game {
+	height: 100vh;
+
+	display: flex;
+	flex-direction: row-reverse;
+	align-items: center;
+	justify-content: center;
+	gap: 150px;
+
+	padding: 40px;
+
+	position: relative;
+}
+
+.game__interface {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 50px;
+}
+
+.game__field {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	padding: 10px;
+	border-radius: 12px;
+	background: rgba(0, 0, 0, .1);
+	gap: 8px;
+}
+
+.game__field_victory {
+	background: rgba(104, 254, 85, 0.547);
+}
+
+.game__field_loose {
+	background: rgba(254, 85, 85, 0.547);
+}
+
+.game__cell {
+	background: rgba(0, 0, 0, .25);
+	border-radius: 10px;
+	padding: 0 15px;
+	font-size: 50px;
+	
+	cursor: default;
+}
+
+.keyboard {
+	background: rgba(0, 0, 0, .1);
+	border-radius: 12px;
+}
+
+.keyboard__row {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	padding: 10px;
+	gap: 8px;
+}
+
+.keyboard__key {
+	background: white;
+	border: 2px solid black;
+	border-radius: 10px;
+	padding: 0 15px;
+	font-size: 36px;
+	cursor: pointer;
+
+	transition: .2s all;
+}
+
+.keyboard__key_right {
+	background: rgba(104, 254, 85, 0.547);
+	cursor: default;
+}
+
+.keyboard__key_wrong {
+	background: rgba(254, 85, 85, 0.547);
+	cursor: default;
+}
+
+.key_active {
+	background: rgba(0, 0, 0, .2);
+	border-color: rgba(0, 0, 0, .2);
+}
+
+.reset,
+.difficulty__choice,
+.history__btn {
+	border-radius: 10px;
+	padding: 0 15px;
+	background: rgba(0, 0, 0, .0);
+	cursor: pointer;
+	font-size: 40px;
+	letter-spacing: 2px;
+	border: 1px solid black;
+
+	transition: .3s all;
+}
+
+.reset {
+	opacity: 0;
+	display: none;
+	transition: .5s all;
+}
+
+.reset_active {
+	display: block;
+	opacity: 1;
+}
+
+.difficulty__choice_active {
+	border-color: rgb(255, 221, 31);
+}
+
+.reset:hover,
+.history__btn:hover,
+.difficulty__choice:hover,
+.keyboard__key:hover:not(.keyboard__key_right):not(.keyboard__key_wrong) {
+	background: rgba(0, 0, 0, .15);
+}
+
+.difficulty {
+	display: none;
+	gap: 30px;
+	opacity: 0;
+	transition: .5s opacity;
+}
+
+.difficulty_active {
+	opacity: 1;
+	display: flex;
+}
+
+.difficulties {
+	display: flex;
+	gap: 20px;
+}
+
+.difficulty__choice {
+	font-size: 30px;
+	border-radius: 20px;
+}
+
+.img__gallows,
+.img__head,
+.img__body,
+.img__left-arm,
+.img__right-arm,
+.img__left-leg,
+.img__right-leg {
+	opacity: 0;
+	transition: .5s opacity;
+}
+
+.img__part_active {
+	opacity: 1;
+}
+
+.history {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+	background: rgba(255, 255, 255, .5);
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	opacity: 0;
+	transition: .5s all;
+}
+
+.history_active {
+	opacity: 1;
+	z-index: 10;
+}
+
+.history__inner {
+	background: rgba(0, 0, 0, .4);
+	height: 70%;
+	width: 50%;
+	border-radius: 50px;
+	padding: 20px;
+	overflow-y: scroll;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 10px;
+}
+
+.history__item {
+	background: rgb(245, 245, 245);
+	width: 80%;
+	border-radius: 18px;
+	padding: 8px 30px;
+
+	display: flex;
+	justify-content: space-between;
+}
+
+.history__item_win {
+	background: rgb(140, 255, 140);
+}
+
+.history__item_loose {
+	background: rgb(255, 158, 158);
+}
+
+.history__result {
+	justify-self: end;
+}
